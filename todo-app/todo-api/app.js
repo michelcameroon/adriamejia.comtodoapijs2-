@@ -23,9 +23,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+var routes = require('./routes/index');
 var todos = require('./routes/todos');
 
-app.use('/', index);
+app.use('/', routes);
+
+
+
+//app.use('/', index);
 app.use('/users', users);
 app.use('/todos', todos);
 
